@@ -10,29 +10,30 @@
 </head>
 <body>
 <div class="toolbar">
-    <div class="think">
-        <button class="t-but t-but_icn_thin" onclick="setThickness(3)"><div></div></button>
-        <button class="t-but t-but_icn_medium" onclick="setThickness(5)"><div></div></button>
-        <button class="t-but t-but_icn_large" onclick="setThickness(10)"><div></div></button>
+    <div class="thinck">
+        <button class="thinck-btn t-but_icn_thin" onclick="setThickness(3)"><div></div></button>
+        <button class="thinck-btn t-but_icn_medium" onclick="setThickness(5)"><div></div></button>
+        <button class="thinck-btn t-but_icn_large" onclick="setThickness(10)"><div></div></button>
     </div>
     <div class="color">
-        <button class="c-but c-but_fill_yellow" onclick="setColor('#ffff00')"></button> <!--желтый-->
-        <button class="c-but c-but_fill_blue" onclick="setColor('#0000ff')"></button> <!--Синий-->
-        <button class="c-but c-but_fill_green" onclick="setColor('#00ff00')"></button> <!--желтый-->
-        <button class="c-but c-but_fill_purple" onclick="setColor('#af0FaF')"></button> <!--Синий-->
-        <button class="c-but c-but_fill_black" onclick="setColor('#000')"></button><!--Черный-->
+        <button class="color-btn c-but_fill_yellow" onclick="setColor('#ffff00')"></button> <!--желтый-->
+        <button class="color-btn c-but_fill_blue" onclick="setColor('#0000ff')"></button> <!--Синий-->
+        <button class="color-btn c-but_fill_green" onclick="setColor('#00ff00')"></button> <!--желтый-->
+        <button class="color-btn c-but_fill_purple" onclick="setColor('#af0FaF')"></button> <!--Синий-->
+        <button class="color-btn c-but_fill_black" onclick="setColor('#000')"></button><!--Черный-->
     </div>
-    <div class="manage">
-        <button onclick="saveData()">save</button>
-        <button onclick="clearWindow()">clear</button>
 
-    </div>
 </div>
 
 <div class="draw-window">
     <canvas id="canvas" width="300" height="150"></canvas>
 </div>
-
+<div class="toolbar">
+    <div class="manage">
+        <button onclick="saveData()">save</button>
+        <button onclick="clearWindow()">clear</button>
+    </div>
+</div>
 
 </body>
 </html>

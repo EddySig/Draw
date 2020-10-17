@@ -22,9 +22,35 @@ window.onload = function (){
         if (event.key != 'canvas') return;
         loadData();
     };
+    let thincks = document.getElementsByClassName("thinck-btn");
+    for (let i = 0; i < thincks.length; i++) {
+        thincks[i].addEventListener('click', function() {
+            for (let i = 0; i < thincks.length; i++) {
+                thincks[i].classList.remove('active');
+            }
+            this.classList.add('active');
+        })
+    }
+
+    let colors = document.getElementsByClassName("color-btn");
+    for (let i = 0; i < colors.length; i++) {
+        colors[i].addEventListener('click', function() {
+            for (let i = 0; i < colors.length; i++) {
+                colors[i].classList.remove('active');
+                colors[i].classList.remove('active_white');
+            }
+            if(this.classList.contains("c-but_fill_black")){
+                this.classList.add('active_white');
+            }else{
+                this.classList.add('active');
+            }
+
+        })
+    }
 }
 
 function createElem(index){ //При необходимости сделать switch
+
     element = new brush(canvas,context);
 }
 
@@ -46,6 +72,7 @@ function mouseup(){
 }
 
 function setThickness(thick){
+    setActive();
     context.lineWidth = thick;
 }
 
@@ -57,8 +84,8 @@ function saveData(){
     localStorage.setItem("canvas",canvas.toDataURL())
 }
 function loadData(){
-    var dataURL = localStorage.getItem("canvas");
-    var img = new Image;
+    let dataURL = localStorage.getItem("canvas");
+    let img = new Image;
     img.src = dataURL;
     img.onload = function () {
         context.drawImage(img, 0, 0);
@@ -68,3 +95,6 @@ function loadData(){
 function clearWindow(){
     context.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+
+
