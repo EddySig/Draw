@@ -72,7 +72,6 @@ function mouseup(){
 }
 
 function setThickness(thick){
-    setActive();
     context.lineWidth = thick;
 }
 
